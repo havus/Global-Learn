@@ -1,0 +1,30 @@
+rumus bg blur 
+.blurBgContainer {
+	background: url(assets/Wallpaper2.jpg);
+	height: 100vh; /*=h*/
+	background-size: cover;
+}
+
+.blurBgContainer .content {
+	background: inherit;
+	width: 60%; /*=cw*/
+	height: 40%; /*=ch*/
+	border-radius: 8px;
+	box-shadow: 0 0 32px rgba(0,0,0,0.3);
+	position: absolute;
+	top: 50%; /*=ct*/
+	left: 40%; /*=cl*/
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+}
+
+.blurBgContainer .blur {
+	background: inherit;
+	height: 100vh; /* h */
+	width: 166.667%; /*(100/cw) x100% */
+	top: 0;
+	left: 0;
+	position: absolute;
+	filter: blur(10px);
+	transform: translate(-10%, -30%); /*(100/cl) x (100-cw)%, (100/ct) x (100-ch)%*/
+	z-index: -1;
